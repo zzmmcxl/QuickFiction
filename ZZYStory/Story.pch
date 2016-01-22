@@ -1,0 +1,34 @@
+//
+//  Story.pch
+//  快读小说
+//
+//  Created by zzyong on 16/1/17.
+//  Copyright © 2016年 zzyong. All rights reserved.
+//
+
+#ifndef Story_pch
+#define Story_pch
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "UIView+Extension.h"
+#import "NSString+Extension.h"
+
+// 通知中心
+#define HWNotificationCenter [NSNotificationCenter defaultCenter]
+
+#ifdef DEBUG // 处于开发阶段
+#define ZYLog(...) NSLog(__VA_ARGS__)
+#else // 处于发布阶段
+#define ZYLog(...)
+#endif
+
+// RGB颜色
+#define ZYColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+// 随机色
+#define RandomColor ZYColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+#endif
+
+#endif /* Story_pch */
